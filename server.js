@@ -7,13 +7,8 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Configure body parser for AJAX requests
-//app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(bodyParser.json());
-// Serve up static assets
-//app.use(express.static("client/build"));
 
-//app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static(path.resolve(__dirname,'client')));
 
 //app.use(bodyParser.json());
@@ -33,8 +28,9 @@ app.use(bodyParser.json());
 // Add routes, both API and view
 app.use(routes);
 
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'build','index.html'));
+app.get('*', function (req, res) {
+  const index = path.join(__dirname, 'build', 'index.html');
+  res.sendFile(index);
 });
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytreact";
