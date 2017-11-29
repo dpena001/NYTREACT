@@ -33,7 +33,7 @@ app.get("*", (req, res) => {
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytreact"
 
 // Set up promises with mongoose
-mongoose.Promise = global.Promise;
+mongoose.Promise = Promise;
 
 // Connect to the Mongo DB
 mongoose.connect(MONGODB_URI, {
