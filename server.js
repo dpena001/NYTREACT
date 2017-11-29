@@ -14,18 +14,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json());
-app.use(express.static('app/client/build'));
 
-app.use(express.static('public'));
-app.use(methodOverride("_method"));
-
-
+app.use(express.static(path.join(__dirname, 'client')));
 
 // Add routes, both API and view
 app.use(routes);
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytreact";
