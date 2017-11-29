@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, './client/public')));
+app.use(express.static("client/public"));
 
 // Add routes, both API and view
 app.use(routes);
