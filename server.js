@@ -20,7 +20,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json());
 app.use(express.static('client/build'));
 
-app.use(express.static('public'));
+//app.use(express.static('public'));
+
 app.use(methodOverride("_method"));
 // Add routes, both API and view
 app.use(routes);
