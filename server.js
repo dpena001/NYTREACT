@@ -20,6 +20,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json());
 app.use(express.static('client/build'));
 
+app.use(express.static('public'));
 //app.use(express.static('public'));
 
 app.use(methodOverride("_method"));
@@ -27,7 +28,7 @@ app.use(methodOverride("_method"));
 app.use(routes);
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/public/index.html'));
+    res.sendFile(path.join(__dirname, './client/public/index.html'));
 });
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytreact"
