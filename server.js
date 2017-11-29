@@ -3,6 +3,7 @@ const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
