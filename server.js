@@ -28,7 +28,7 @@ app.use(methodOverride("_method"));
 app.use(routes);
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, './client/public/index.html'));
+    res.sendFile(path.join(__dirname, 'app/client/public/index.html'));
 });
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytreact"
