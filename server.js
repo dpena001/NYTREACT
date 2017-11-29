@@ -6,14 +6,11 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Configure body parser for AJAX requests
-//app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(bodyParser.json());
-// Serve up static assets
-//app.use(express.static("app/client/build"));
-app.use(express.static(path.join(__dirname,"client")));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(bodyParser.text());
+// Serve up static assets
+app.use(express.static("client/build"));
+
 //app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
