@@ -30,17 +30,15 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, '../client/public/index.html'));
 });
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytreact"
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 
 // Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/nytreact",
-  {
-    useMongoClient: true
-  }
-);
+mongoose.connect(MONGODB_URI, {
+  useMongoClient: true
+});
 
 // Start the API server
 app.listen(PORT, function() {
