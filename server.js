@@ -20,7 +20,7 @@ app.use(express.static(path.resolve(__dirname,'build')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json());
-app.use(express.static('client/build'));
+//app.use(express.static('client/build'));
 
 //app.use(express.static(path.join(__dirname,"public")));
 //app.use(bodyParser.urlencoded({ extended: true }));
