@@ -3,7 +3,7 @@ const express = require("express");
 const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
 const path = require("path");
-const routes = require ('./routes');
+
 
 // Express configuration
 const app = express();
@@ -21,8 +21,12 @@ app.use(express.static('client/build'));
 app.use(express.static('public'));
 app.use(methodOverride("_method"));
 
+const db = require("./models");
+
+const routes = require("./routes/index.js");
+
 // Add routes, both API and view
-app.use(routes);
+app.use("/",routes);
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, './client/public/index.html'));
