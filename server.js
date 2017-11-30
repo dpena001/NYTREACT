@@ -20,6 +20,8 @@ app.use(routes);
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytreact";
 
+console.log(MONGODB_URI);
+
 // Set up promises with mongoose
 mongoose.Promise = Promise;
 // Connect to the Mongo DB
