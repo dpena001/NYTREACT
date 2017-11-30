@@ -23,7 +23,7 @@ app.use(methodOverride("_method"));
 
 const db = require("./models");
 
-const routes = require("./routes/index.js");
+const routes = require("./routes/articles.js");
 
 // Add routes, both API and view
 app.use("/",routes);
@@ -33,8 +33,6 @@ app.get("*", (req, res) => {
 });
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytreact";
-
-console.log(MONGODB_URI);
 
 // Set up promises with mongoose
 mongoose.Promise = Promise;

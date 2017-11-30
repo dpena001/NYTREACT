@@ -31,16 +31,16 @@ export default {
   },
 
   getArticles: function() {
-    return axios.get("/api/saved");
+    return axios.get("/saved");
   },
 
   getArticle: function(id) {
-    return axios.get("/api/saved/" + id);
+    return axios.get("/saved/" + id);
   },
   deleteArticle: function(id) {
-    return axios.delete("/api/saved/" + id);
+    return axios.delete("/saved/" + id);
   },
   saveArticle: function(articleData) {
-    return axios.post("/api/saved", articleData);
+    return axios.post("/saved", articleData);
   },
 };
