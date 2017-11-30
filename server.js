@@ -21,8 +21,6 @@ app.use(express.static('client/public'));
 app.use(express.static('public'));
 app.use(methodOverride("_method"));
 
-const db = require("./models");
-
 const routes = require("./routes/articles.js");
 
 // Add routes, both API and view
