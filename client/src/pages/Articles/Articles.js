@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
-import API from "../../utils/API";
+import API from "../../utils/api";
 import {Input,Jtron, List, ListItem, FormBtn, Container,Ito,Heading,Grid,SaveBtn} from "../../components/Main";
 
 class Articles extends Component {
